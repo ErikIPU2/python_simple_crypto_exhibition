@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"
+          media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+<header>
+    <nav class="white">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo black-text">Criptografias</a>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card red accent-4">
+                <div class="card-content white-text">
+                    <span class="card-title">Cifra</span>
+                    <p>O método em cifra, é a técnica na qual o conteúdo da mensagem é cifrado através da mistura e/ou
+                        substituição das letras da mensagem original.</p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Cifrador<i
+                            class="material-icons right">close</i></span>
+                    <div class="row">
+                        <div class="col s12 input-field">
+                            <input id="cifre-text" type="text"/>
+                            <label for="cifre-text">Texto para ser cifrado</label>
+                        </div>
+                        <div class="col s12 input-field">
+                            <input id="cifre-key" type="number"/>
+                            <label for="cifre-key">Chave de cifragem</label>
+                        </div>
+
+                        <div class="col s12 input-field">
+                            <input disabled id="cifre-result" type="text" placeholder="Resultado"/>
+                        </div>
+
+                        <button id="cifre-button" class="btn red accent-4 waves-effect waves-light col s12">Cifrar
+                        </button>
+
+                        <span class="card-title">Descifrador</span>
+
+                        <div class="col s12 input-field">
+                            <input id="descifre-text" type="text"/>
+                            <label for="descifre-text">Texto para ser descifrado</label>
+                        </div>
+                        <div class="col s12 input-field">
+                            <input id="descifre-key" type="number"/>
+                            <label for="descifre-key">Chave de cifragem</label>
+                        </div>
+
+                        <div class="col s12 input-field">
+                            <input disabled id="descifre-result" type="text" placeholder="Resultado"/>
+                        </div>
+
+
+                        <button id="descifre-button" class="btn red accent-4 waves-effect waves-light col s12">
+                            Descifrar
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="card-action">
+                    <a href="#" class="activator">Acessar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card red accent-4">
+                <div class="card-content white-text">
+                    <span class="card-title">Hash</span>
+                    <p>Uma função de hash criptográfico, muitas vezes é conhecida simplesmente como hash – é um algoritmo matemático que transforma qualquer bloco de dados em uma série de caracteres de comprimento fixo. Independentemente do comprimento dos dados de entrada, o mesmo tipo de hash de saída será sempre um valor hash do mesmo comprimento.</p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Hashador<i
+                            class="material-icons right">close</i></span>
+                    <div class="row">
+
+                        <div class="col s12 input-field">
+                            <input id="hash-message" type="text"/>
+                            <label for="hash-message">Mensagem</label>
+                        </div>
+
+                        <div class="col s12 input-field">
+                            <textarea class="materialize-textarea" id="hash-result" placeholder="Resultado"></textarea>
+                        </div>
+
+                         <button id="hash-button" class="btn red accent-4 waves-effect waves-light col s12">
+                             Hash
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-action">
+                    <a href="#" class="activator">Acessar</a>
+                </div>
+            </div>
+        </div>
+
+         <div class="col s12 m6">
+            <div class="card red accent-4">
+                <div class="card-content white-text">
+                    <span class="card-title">Chave Simetrica</span>
+                    <p>É o tipo de chave mais simples e a mesma chave é utilizada tanto pelo emissor quanto por quem recebe a informação. Ou seja, a mesma chave é utilizada para codificação e para a decodificação dos dado.</p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Chave simetrica<i
+                            class="material-icons right">close</i></span>
+                    <div class="row">
+                        <div class="col s12 input-field">
+                            <input id="simetric-c-text" type="text"/>
+                            <label for="simetric-c-text">Texto para ser cifrado</label>
+                        </div>
+                        <div class="col s12 input-field">
+                            <input id="simetric-c-key" type="number"/>
+                            <label for="simetric-c-key">Chave de cifragem</label>
+                        </div>
+
+                        <div class="col s12 input-field">
+                            <input disabled id="simetric-c-result" type="text" placeholder="Resultado"/>
+                        </div>
+
+                        <button id="simetric-c-button" class="btn red accent-4 waves-effect waves-light col s12">Cifrar
+                        </button>
+
+                        <span class="card-title">Descifrador</span>
+
+                        <div class="col s12 input-field">
+                            <input id="simetric-d-text" type="text"/>
+                            <label for="simetric-d-text">Texto para ser descifrado</label>
+                        </div>
+                        <div class="col s12 input-field">
+                            <input id="simetric-d-key" type="number"/>
+                            <label for="simetric-d-key">Chave de cifragem</label>
+                        </div>
+
+                        <div class="col s12 input-field">
+                            <input disabled id="simetric-d-result" type="text" placeholder="Resultado"/>
+                        </div>
+
+
+                        <button id="simetric-d-button" class="btn red accent-4 waves-effect waves-light col s12">
+                            Descifrar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-action">
+                    <a href="#" class="activator">Acessar</a>
+                </div>
+            </div>
+        </div>
+
+         <div class="col s12 m6">
+            <div class="card red accent-4">
+                <div class="card-content white-text">
+                    <span class="card-title">Chave Assimetrica</span>
+                    <p>Também conhecida como "chave pública", a chave assimétrica trabalha com duas chaves: uma privada e outra pública. Nesse método, uma pessoa deve criar uma chave de codificação e enviá-la a quem for lhe mandar informações. Essa é a chave pública. Uma outra chave deve ser criada para a decodificação. Esta, a chave privada, é secreta.</p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Chave Assimetrica<i
+                            class="material-icons right">close</i></span>
+                    <div class="row">
+
+                        <div class="col s12 input-field">
+                            <textarea id="assimetric_get_key" type="text"></textarea>
+                            <label for="assimetric_get_key">Chave publica</label>
+                        </div>
+
+                         <button id="button-assimetric_get_key" class="btn red accent-4 waves-effect waves-light col s12">
+                             Ver chave publica
+                        </button>
+
+                        <div class="col s12 input-field">
+                            <textarea id="assimetric_get_key_p" type="text"></textarea>
+                            <label for="assimetric_get_key_p">Chave privada</label>
+                        </div>
+
+                         <button id="button-assimetric_get_key_p" class="btn red accent-4 waves-effect waves-light col s12">
+                             Ver chave privada
+                        </button>
+
+
+                    </div>
+                </div>
+
+                <div class="card-action">
+                    <a href="#" class="activator">Acessar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/cifre.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/hash.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/simetric.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/assimetric.js') }}"></script>
+
+</body>
+</html>
